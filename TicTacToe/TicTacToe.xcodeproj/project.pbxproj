@@ -193,13 +193,16 @@
 				TargetAttributes = {
 					4CF126362226AF2A00A2F8D4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1110;
 					};
 					4CF1264A2226AF2B00A2F8D4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1110;
 						TestTargetID = 4CF126362226AF2A00A2F8D4;
 					};
 					4CF126552226AF2B00A2F8D4 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1110;
 						TestTargetID = 4CF126362226AF2A00A2F8D4;
 					};
 				};
@@ -433,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				INFOPLIST_FILE = TicTacToe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,8 +444,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = epimac.TicTacToe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -450,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				INFOPLIST_FILE = TicTacToe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,8 +462,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = epimac.TicTacToe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -476,7 +481,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = epimac.TicTacToeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
@@ -496,7 +501,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = epimac.TicTacToeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToe.app/TicTacToe";
 			};
@@ -515,7 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = epimac.TicTacToeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TicTacToe;
 			};
@@ -534,7 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = epimac.TicTacToeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TicTacToe;
 			};

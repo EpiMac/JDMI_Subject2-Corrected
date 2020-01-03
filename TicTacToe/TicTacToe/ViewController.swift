@@ -30,9 +30,42 @@ class ViewController: UIViewController
     // Sender correspond au bouton sur lequel on a appuyé
     @IBAction func play(_ sender : UIButton)
     {
-        //--------
-        //--TODO--
-        //--------
+        if (grid[sender.tag - 1] != "")
+        {
+            return
+        }
+        
+        if (turn == 1)
+        {
+            sender.setBackgroundImage(UIImage(named: "x"), for: UIControl.State())
+            grid[sender.tag - 1] = "x"
+            turn = 2
+            
+            turnLabel.text = "Tour du joueur O"
+        }
+        else
+        {
+            sender.setBackgroundImage(UIImage(named: "o"), for: UIControl.State())
+            grid[sender.tag - 1] = "o"
+            turn = 1
+            
+            turnLabel.text = "Tour du joueur X"
+        }
+        
+        let res = checkWin()
+        
+        if (res == "x")
+        {
+            sendAlert(msg: "Le joueur X a gagné la partie !")
+        }
+        else if (res == "o")
+        {
+            sendAlert(msg: "Le joueur O a gagné la partie !")
+        }
+        else if (isFull())
+        {
+            sendAlert(msg: "Egalité ")
+        }
     }
     
     // Fonction qui vérifie si quelqu'un a gagné
@@ -61,20 +94,44 @@ class ViewController: UIViewController
     // Retourne "" si personne a gagné, "x" si le joueur 1 a gagné, "o" si je joueur 2 a gagné
     func checkColumn() -> String
     {
-        //--------
-        //--TODO--
-        //--------
-        return ""
+        if (grid[0] != "" && grid[0] == grid[3] && grid[3] == grid[6])
+        {
+            return grid[0]
+        }
+        else if (grid[1] != "" && grid[1] == grid[4] && grid[4] == grid[7])
+        {
+            return grid[1]
+        }
+        else if (grid[2] != "" && grid[2] == grid[5] && grid[5] == grid[8])
+        {
+            return grid[2]
+        }
+        else
+        {
+            return ""
+        }
     }
     
     // Fonction qui vérifie les lignes de la grille
     // Retourne "" si personne a gagné, "x" si le joueur 1 a gagné, "o" si je joueur 2 a gagné
     func checkLine() -> String
     {
-        //--------
-        //--TODO--
-        //--------
-        return ""
+        if (grid[0] != "" && grid[0] == grid[1] && grid[1] == grid[2])
+        {
+            return grid[0]
+        }
+        else if (grid[3] != "" && grid[3] == grid[4] && grid[4] == grid[5])
+        {
+            return grid[3]
+        }
+        else if (grid[6] != "" && grid[6] == grid[7] && grid[7] == grid[8])
+        {
+            return grid[6]
+        }
+        else
+        {
+            return ""
+        }
     }
     
     // Fonction qui vérifie les diagonales de la grille
@@ -98,16 +155,24 @@ class ViewController: UIViewController
     // Return true si la grille est pleine, false sinon
     func isFull() -> Bool
     {
-        //--------
-        //--TODO--
-        //--------
-        return false
+        for i in 0..<grid.count
+        {
+            if (grid[i] == "")
+            {
+                return false
+            }
+        }
+        return true
+    }
+    
+    @IBAction func restartGame(_ sender: Any)
+    {
+        reset()
     }
     
     // Fonction qui réinitialise la grille de jeu
     func reset()
     {
-        
         for i in 0...8
         {
             let button = view.viewWithTag(i + 1) as! UIButton
@@ -123,7 +188,7 @@ class ViewController: UIViewController
     func sendAlert(msg: String)
     {
         let alert = UIAlertController(title: msg, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Let's continue!", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Let's continue!", style: .default, handler: { action in self.reset() }))
         self.present(alert, animated: true)
     }
 }
